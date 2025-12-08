@@ -53,6 +53,9 @@ const createLoaders = () => ({
 
 const app = express();
 
+// Disable 'X-Powered-By' to avoid leaking framework info
+app.disable('x-powered-by');
+
 app.use(cors({
   origin: [process.env.MDM_SERVER_URL, process.env.XAVIER_FRONTEND_SERVER_URL]
 }));
