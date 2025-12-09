@@ -120,7 +120,7 @@ export default function MacDetail() {
     },
   ];
 
-  const renderModals = (device) => (
+  const renderModals = (device, configProfiles) => (
     <>
       {showRestartDeviceModal && (
         <RestartDeviceModal
@@ -134,7 +134,7 @@ export default function MacDetail() {
           visible={showInstallProfileModal}
           UDID={device.UDID}
           currentProfiles={device.Profiles}
-          configProfiles={device.configProfiles}
+          configProfiles={configProfiles}
           hideInstallProfileModal={() => setShowInstallProfileModal(false)}
         />
       )}

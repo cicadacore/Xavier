@@ -129,7 +129,7 @@ export const DeviceDetailBase = ({
 
           <hr />
           <DetailTabs device={device} />
-          {renderModals && renderModals(device)}
+          {renderModals && renderModals(device, data.configProfiles)}
         </main>
       )}
     </>

@@ -73,7 +73,7 @@ export default function IPadDetail() {
     }
   ];
 
-  const renderModals = (device) => (
+  const renderModals = (device, configProfiles) => (
     <>
       {showRenameDeviceModal && (
         <RenameDeviceModal
@@ -89,7 +89,7 @@ export default function IPadDetail() {
           visible={showInstallProfileModal}
           UDID={device.UDID}
           currentProfiles={device.Profiles}
-          configProfiles={device.configProfiles}
+          configProfiles={configProfiles}
           hideInstallProfileModal={() => setShowInstallProfileModal(false)}
         />
       )}
