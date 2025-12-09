@@ -106,7 +106,7 @@ function clearPasscode_MDM_Command(udid, unlockToken, requester) {
     <string>ClearPasscode</string>
     <key>UnlockToken</key>
     <data>${unlockToken}</data>
-  `;
+  `.replace(/\n|\r/g, "");
   sendMDMCommand(udid, createRawCommandPlistWithLog(args, 'clear passcode', requester, udid));
 }
 
@@ -228,3 +228,4 @@ export {
   eraseDevice_MDM_Command,
   getAvailableSoftwareUpdates_MDM_Command
 };
+

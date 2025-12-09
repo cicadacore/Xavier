@@ -152,7 +152,7 @@ const clearPasscode = async (req, res) => {
     } else if (platform === 'iOS') {
         UnlockToken = await iOSDevice.findOne({UDID: udid}).select('UnlockToken -_id');
     }
-    clearPasscode_MDM_Command(udid, UnlockToken, requester);
+    clearPasscode_MDM_Command(udid, UnlockToken.UnlockToken, requester);
     return res.sendStatus(200);
 }
 
